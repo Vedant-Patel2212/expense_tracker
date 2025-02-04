@@ -2,7 +2,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-ob_start(); // Start output buffering
+ob_start();
 session_start();
 include 'db_connect.php';
 
@@ -34,5 +34,5 @@ if ($row = $result->fetch_assoc()) {
 
 $stmt->close();
 $conn->close();
-ob_end_flush(); // End output buffering
+ob_end_flush(); 
 ?>
