@@ -20,7 +20,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $start_date = $_POST['start_date'];
     $end_date = $_POST['end_date'];
 
-    // Fetch transactions
     $query = "SELECT 'Income' as type, amount, description, date, category FROM income WHERE user_id = ? AND date BETWEEN ? AND ?
               UNION ALL
               SELECT 'Expense' as type, amount, description, date, category FROM expenses WHERE user_id = ? AND date BETWEEN ? AND ?
@@ -32,17 +31,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $result = $stmt->get_result();
 
 
-    // Set headers for CSV download
     header('Content-Type: text/csv');
     header('Content-Disposition: attachment; filename="transactions_' . date('Y-m-d') . '.csv"');
 
-    // Open output stream
     $output = fopen('php://output', 'w');
 
-    // Add CSV headers
     fputcsv($output, array('Type', 'Amount', 'Description', 'Date', 'Category'));
 
-    // Add data to CSV
     while ($row = $result->fetch_assoc()) {
         fputcsv($output, $row);
     }
@@ -55,8 +50,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Export Transactions - Expense Tracker</title>
     <link rel="stylesheet" href="mycss.css">
 </head>
