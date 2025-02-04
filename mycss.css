@@ -12,7 +12,6 @@ body {
   display: flex;
 }
 
-/* Sidebar Styles */
 .sidebar {
   width: 280px;
   background: white;
@@ -100,7 +99,6 @@ body {
   margin-right: 10px;
 }
 
-/* Main Content Styles */
 .main-content {
   flex: 1;
   padding: 20px;
@@ -114,7 +112,6 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Form Styles */
 .add-form,
 .export-form {
   max-width: 500px;
@@ -162,7 +159,6 @@ body {
   background-color: #45a049;
 }
 
-/* Alert Styles */
 .alert {
   padding: 15px;
   margin-bottom: 20px;
@@ -181,7 +177,6 @@ body {
   border: 1px solid #f5c6cb;
 }
 
-/* Dashboard Specific Styles */
 .chart-section {
   margin-bottom: 30px;
 }
@@ -301,7 +296,6 @@ body {
   margin-bottom: 30px;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   body {
     flex-direction: column;
@@ -321,7 +315,6 @@ body {
   }
 }
 
-/* Export Transactions Styles */
 .export-info {
   margin-top: 30px;
   background-color: #f8f9fa;
@@ -344,7 +337,6 @@ body {
   margin-bottom: 0;
 }
 
-/* Login and Signup Page Styles */
 .auth-container {
   display: flex;
   justify-content: center;
